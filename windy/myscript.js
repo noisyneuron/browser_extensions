@@ -14,12 +14,14 @@ $(function() {
 
   $('*').each(function(index, el) {
     $(el).mouseenter(function(e) {
+      e.stopPropagation();
       $(this).addClass('rotate');
       $(this).css('display', 'block');
-      $(this).css('transform-origin', 'top left');
+      // $(this).css('transform-origin', 'top left');
       $(this).data("rotation", 0);
     });
     $(el).mouseleave(function(e) {
+      e.stopPropagation();
       $(this).removeClass('rotate');
       // $(this).css('display', 'inline');
     });
