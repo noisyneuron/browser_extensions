@@ -15,6 +15,7 @@
 
  - "Downloading Files" loading bar on some pages randomly
 
- - "word is an invisible link to its wikipedia page"
+ - every word is an invisible link to its wikipedia page
 
+ - when filling out a "password" input field, the browser speaks every key press and then upon submission, says the final password has been submitted. 
 
