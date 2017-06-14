@@ -3,7 +3,7 @@
 
   "name": "Windy",
   "description": "This extension shows a Google Image search result for the current page",
-  "version": "1.0",
+  "version": "1.0.1",
 
  "background": {
    "scripts": ["eventPage.js"],
