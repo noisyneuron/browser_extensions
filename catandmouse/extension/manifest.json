@@ -3,12 +3,14 @@
 
   "name": "Meow Barf",
   "description": "Meeeooooow me hungry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   
   "permissions": [
     "activeTab"
   ],
-  
+  "web_accessible_resources": [
+    "cat.gif"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

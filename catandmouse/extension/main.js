@@ -12,12 +12,18 @@ $(function() {
   var activateLaunchCat;
   var cursorMode = "hide";
 
+  $(window).resize(function() {
+    wh = $(window).height();
+    ww = $(window).width();
+  });
+
   var cat = new Image();
-  cat.src = "cat.gif";
+  cat.src = chrome.extension.getURL("cat.gif");
   cat.id = "cat";
   cat.style.width = '150px';
   cat.style.height = 'auto';
   cat.style.position = 'fixed';
+  cat.style.top = '100%';
   cat.style["z-index"] = 100;
   cat.onload = function() {
     $('html').append(cat);
@@ -37,8 +43,11 @@ $(function() {
   function hideMouse() {
     var catArea = {x : c.x + .5*catSize.x, y: c.y + .25*catSize.y};
     if(Math.abs(m.x - catArea.x) < 15 || Math.abs(m.y - catArea.y) < 15) {
-      if(cursorMode == "hide") {
+      var cursor = $('html').css('cursor');
+      // if(cursorMode == "hide" &) {
+      if(cursorMode == "hide" && cursor != 'none') {
         $('html').css({cursor: 'none'});
+      
       } else {
         $('html').css({cursor: 'auto'});
       }
