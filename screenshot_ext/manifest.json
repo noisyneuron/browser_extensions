@@ -1,0 +1,29 @@
+{
+  "description": "strange transitions bw pages",
+  "name": "screenslap",
+  "manifest_version": 2,
+  "version": "0.0.1",
+
+  "background": {
+  "page": "background.html"
+  },
+
+  "permissions": ["<all_urls>", "tabs"],
+
+  "browser_action": {
+      "default_icon": "icons/pazzo.png",
+      "default_title": "Slap it!"
+  },
+
+  "content_scripts": [{
+      "matches" : ["<all_urls>"],
+      "js": ["content.js"]
+  }],
+
+    "applications": {
+      "gecko": {
+        "id": "synchropazzo@gmail.com"
+      }
+    }
+
+}
