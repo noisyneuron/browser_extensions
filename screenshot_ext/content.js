@@ -19,13 +19,16 @@ myPort.onMessage.addListener(function(m) {
     var el = document.createElement("div");
     el.setAttribute('id','container');
     el.setAttribute('style','position:fixed;top:0;left:0;width:' + window.innerWidth+ 'px;height:' + window.innerHeight + 'px;z-index:10000000;');
+    var vavv = new Image();
+    vavv.src = m.data;
     document.getElementsByTagName('body')[0].appendChild(el);
+    vavv.onload = function(){doThreeStuff(vavv.src)};
     console.log(el);
     //document.getElementsByTagName('html')[0].innerHTML = '<div id="container"></div>';
     setTimeout(function() {
       window.location = link;
     }, 3000)
-    doThreeStuff(m.data);
+    //doThreeStuff(m.data);
 });
 
 
@@ -121,16 +124,16 @@ function getFragmentShader() {
   "  float swirl_radius = PI/2.;\n" +
   "  float swirl_amt = 1.;\n" +
   "  float modtime = mod(time*0.04, 10.)/10.;\n" +
-  "  st *= mat2(cos(modtime*2.), -sin(modtime*2.),\n" +
-  "            sin(modtime*2.), cos(modtime*2.));\n" +
-  "  st *= mix(1., 4., pow(modtime,2.));\n" +
+ // "  st *= mat2(cos(modtime*2.), -sin(modtime*2.),\n" +
+ // "            sin(modtime*2.), cos(modtime*2.));\n" +
+ // "  st *= mix(1., 4., pow(modtime,2.));\n" +
   "  float f_rad = st.x*st.x + st.y*st.y;    \n" +
-  "  swirl_radius = mix(PI/2., f_rad, modtime);\n" +
+ // "  swirl_radius = mix(PI/2., f_rad, modtime);\n" +
   "  vec2 imgCoords = swirl(st, swirl_radius, swirl_amt);\n" +
   "  imgCoords = imgCoords*0.5 + 0.5;\n" +
   "  vec4 imgCol = texture2D(img, imgCoords);\n" +
   "  vec2 inBounds = step(0., imgCoords) * 1. - step(1.00001, imgCoords);\n" +
-  "  imgCol.rgb -= pow(modtime,2.);\n" +
+  //"  imgCol.rgb -= pow(modtime,2.);\n" +
   "  imgCol.rgb *= inBounds.x*inBounds.y;\n" +
   "  gl_FragColor = imgCol;\n" +
   "}"
