@@ -4,6 +4,8 @@ var portFromCS;
 
 function connected(p) {
    portFromCS = p;
+   console.log('connected to content-script');
+   console.log(p);
 }
 
 browser.runtime.onConnect.addListener(connected);

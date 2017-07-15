@@ -16,7 +16,12 @@ myPort.onMessage.addListener(function(m) {
     console.log("In content script, received message from background script: ");
     console.log(m);
     // threejs script goes here
-    document.getElementsByTagName('html')[0].innerHTML = '<div id="container"></div>';
+    var el = document.createElement("div");
+    el.setAttribute('id','container');
+    el.setAttribute('style','position:fixed;top:0;left:0;width:' + window.innerWidth+ 'px;height:' + window.innerHeight + 'px;z-index:10000000;');
+    document.getElementsByTagName('body')[0].appendChild(el);
+    console.log(el);
+    //document.getElementsByTagName('html')[0].innerHTML = '<div id="container"></div>';
     setTimeout(function() {
       window.location = link;
     }, 3000)
