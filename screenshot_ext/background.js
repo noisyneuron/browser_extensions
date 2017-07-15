@@ -14,7 +14,7 @@ function onCaptured(imageUri) {
 }
 
 function onError(error) {
-  console.log(`Error: ${error}`);
+    console.log(`Error: ${error}`);
 }
 
 browser.runtime.onMessage.addListener(function(d) {
