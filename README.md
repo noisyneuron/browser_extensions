@@ -1,21 +1,10 @@
 
-# IDEAS
+# A collection of productivity and self-improvement extensions
 
- - add to cart button on every element with count on top corner
+ -  meow-barf : helps you stay alert by releasing a cat to eat your mouse. if you're nice you may get it back. if you're alert, you can dodge the cat.  
 
- - clicking on elements causes them to fall off the pages
+ - keyhole : helps you remember your password by announcing it as you type, and then displaying it on your screen.  
 
- - invisible maze that inhibits mouse movement
+ - windy : helps you practice and improve your mouse accuracy by adding some wind to your webpage.  
 
- - mouse clicks are slightly off from the pointer
-
- - bouncing ball loaded onto page will open any link it runs into
-
- - loading a new weppages causes it to open in 10 tabs
-
- - "Downloading Files" loading bar on some pages randomly
-
- - every word is an invisible link to its wikipedia page
-
- - when filling out a "password" input field, the browser speaks every key press and then upon submission, says the final password has been submitted. 
-
+- flush : helps you let go by flushing your webpages away.  
